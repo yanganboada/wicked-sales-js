@@ -1,0 +1,18 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  background-color: #F2F2F2;
+  font-family: 'Lato', sans-serif;
+}
+
+img{
+  object-fit: scale-down;
+  padding: 1%;
+}
+
+.card-height{
+  height: 50vh;
+}
