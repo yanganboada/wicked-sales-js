@@ -29,7 +29,7 @@ class ProductList extends React.Component {
         <main className="row justify-content-center m-2">
           {
             this.state.products.map((product, index) => {
-              return <ProductListItem item={product} key={index} />;
+              return <ProductListItem item={product} key={index} setView={this.props.toggleView} />;
             })
           }
         </main>

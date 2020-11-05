@@ -16,3 +16,7 @@ img{
 .card-height{
   height: 50vh;
 }
+
+.cursor{
+  cursor: pointer;
+}
