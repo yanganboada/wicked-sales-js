@@ -190,8 +190,8 @@ app.post('/api/orders', (req, res, next) => {
   } else {
     if (!nameVal || !creditCardVal || !shippingAddVal) {
       throw new ClientError('"name", "creditCard" and "shippingAddress" are all required', 400);
-    } else if (!Number(creditCardVal) || `${creditCardVal}`.length !== 15 && `${creditCardVal}`.length!==16) {
-      throw new ClientError('Credit Card number must be 15 or 16 digits', 400);
+    } else if (creditCardVal.length !== 15 && creditCardVal.length!==16) {
+      throw new ClientError('Credit Card Number must contains 15 or 16 digits', 400);
     } else {
 
       const insert = `
@@ -204,7 +204,7 @@ app.post('/api/orders', (req, res, next) => {
 
       db.query(insert, params)
         .then(result => {
-          delete req.session.cartIdVal;
+          delete cartIdVal;
           res.status(201).json(result.rows[0]);
         })
         .catch(err => console.error(err));
