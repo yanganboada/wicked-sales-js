@@ -57,27 +57,27 @@ class App extends React.Component {
   }
 
   render() {
-    if(this.state.view.name === 'catalog'){
-     return(
-       <div>
-         <Header cartItemCount={this.state.cart.length} toggleView={this.setView}/>
-         <ProductList toggleView={this.setView} />
-       </div>
-     )
-    } else if (this.state.view.name === 'details'){
-      return(
+    if (this.state.view.name === 'catalog') {
+      return (
+        <div>
+          <Header cartItemCount={this.state.cart.length} toggleView={this.setView}/>
+          <ProductList toggleView={this.setView} />
+        </div>
+      );
+    } else if (this.state.view.name === 'details') {
+      return (
         <div>
           <Header cartItemCount={this.state.cart.length} toggleView={this.setView}/>
           <ProductDetails params={this.state.view.params} toggleView={this.setView} addToCart={this.addToCart} />
         </div>
-      )
-    } else if (this.state.view.name === 'cart'){
-      return(
+      );
+    } else if (this.state.view.name === 'cart') {
+      return (
         <div>
           <Header cartItemCount={this.state.cart.length} toggleView={this.setView}/>
           <CartSummary cart={this.state.cart} toggleView={this.setView}/>
         </div>
-      )
+      );
     }
 
   }

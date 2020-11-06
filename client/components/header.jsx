@@ -1,16 +1,16 @@
-import React from 'react'
+import React from 'react';
 
-class Header extends React.Component{
-  constructor (props){
+class Header extends React.Component {
+  constructor(props) {
     super(props);
-    this.handleCartClick = this.handleCartClick.bind(this)
+    this.handleCartClick = this.handleCartClick.bind(this);
   }
 
-  handleCartClick(){
+  handleCartClick() {
     this.props.toggleView('cart', {});
   }
 
-  render(){
+  render() {
     return (
       <header className="row text-white bg-dark py-3 justify-content-center align-items-baseline">
         <h4 className="col-8 m-0" text="$ Wicked Sales">$ Wicked Sales</h4>
