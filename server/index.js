@@ -97,6 +97,7 @@ app.post('/api/cart', (req, res, next) => {
       error: '"productId" must be a positive integer'
     });
   } else {
+
     const sql = `
     select "price"
       from "products"
