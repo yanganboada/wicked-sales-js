@@ -2,6 +2,8 @@ import React from 'react';
 import Header from './header';
 import ProductList from './product-list';
 import ProductDetails from './product-details';
+import CartSummary from './cart-summary';
+import CartSummaryItem from './cart-summary-item';
 
 class App extends React.Component {
   constructor(props) {
@@ -55,15 +57,29 @@ class App extends React.Component {
   }
 
   render() {
-    return this.state.view.name === 'catalog'
-      ? <div>
-        <Header cartItemCount={this.state.cart.length}/>
-        <ProductList toggleView={this.setView}/>
-      </div>
-      : <div>
-        <Header cartItemCount={this.state.cart.length}/>
-        <ProductDetails params={this.state.view.params} toggleView={this.setView} addToCart={this.addToCart}/>
-      </div>;
+    if (this.state.view.name === 'catalog') {
+      return (
+        <div>
+          <Header cartItemCount={this.state.cart.length} toggleView={this.setView}/>
+          <ProductList toggleView={this.setView} />
+        </div>
+      );
+    } else if (this.state.view.name === 'details') {
+      return (
+        <div>
+          <Header cartItemCount={this.state.cart.length} toggleView={this.setView}/>
+          <ProductDetails params={this.state.view.params} toggleView={this.setView} addToCart={this.addToCart} />
+        </div>
+      );
+    } else if (this.state.view.name === 'cart') {
+      return (
+        <div>
+          <Header cartItemCount={this.state.cart.length} toggleView={this.setView}/>
+          <CartSummary cart={this.state.cart} toggleView={this.setView}/>
+        </div>
+      );
+    }
+
   }
 }
 
