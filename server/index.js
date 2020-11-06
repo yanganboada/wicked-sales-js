@@ -176,7 +176,39 @@ app.post('/api/cart', (req, res, next) => {
         );
       })
       .catch(err => next(err));
+  }
+});
 
+app.post('/api/orders', (req, res, next) => {
+  const cartIdVal = req.session.cartId
+  const nameVal = req.body.name;
+  const creditCardVal = req.body.creditCard;
+  const shippingAddVal = req.body.shippingAddress;
+
+  if (!cartIdVal) {
+    throw new ClientError('Invalid "cartId" or "cartId is not existed', 400);
+  } else {
+    if (!nameVal || !creditCardVal || !shippingAddVal) {
+      throw new ClientError('"name", "creditCard" and "shippingAddress" are all required', 400);
+    } else if (!Number(creditCardVal) || `${creditCardVal}`.length !== 15 && `${creditCardVal}`.length!==16) {
+      throw new ClientError('Credit Card number must be 15 or 16 digits', 400);
+    } else {
+
+      const insert = `
+        insert into "orders" ("name", "creditCard", "shippingAddress", "cartId")
+        values ($1, $2, $3, $4)
+        returning *;
+      `;
+
+      const params = [ nameVal, creditCardVal, shippingAddVal, cartIdVal];
+
+      db.query(insert, params)
+        .then(result => {
+          delete req.session.cartIdVal;
+          res.status(201).json(result.rows[0]);
+        })
+        .catch(err => console.error(err));
+    }
   }
 });
 
