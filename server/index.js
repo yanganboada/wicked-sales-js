@@ -15,7 +15,7 @@ app.use(express.json());
 
 app.get('/api/health-check', (req, res, next) => {
   db.query('select \'successfully connected\' as "message"')
-    .then(res => res.json(res.rows[0]))
+    .then(result => res.json(result.rows[0]))
     .catch(err => next(err));
 });
 
@@ -30,8 +30,8 @@ app.get('/api/products', (req, res, next) => {
   `;
 
   db.query(sql)
-    .then(res => {
-      const products = res.rows;
+    .then(result => {
+      const products = result.rows;
       res.status(200).json(products);
     })
     .catch(err => next(err));
@@ -54,11 +54,11 @@ app.get('/api/products/:productId', (req, res, next) => {
   const values = [req.params.productId];
 
   db.query(sql, values)
-    .then(res => {
-      if (res.rowCount === 0) {
-        next(new ClientError(`"productId" ${productId} does not exist in the database`, 404));
+    .then(result => {
+      if (result.rowCount === 0) {
+        next(new ClientError(`"productId" ${productId} does not in the database`, 404));
       } else {
-        res.status(200).json(res.rows[0]);
+        res.status(200).json(result.rows[0]);
       }
     })
     .catch(err => next(err));
