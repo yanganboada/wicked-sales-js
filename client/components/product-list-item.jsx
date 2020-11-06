@@ -7,7 +7,7 @@ class ProductListItem extends React.Component {
   }
 
   handleItemClick() {
-    this.props.setView('details', this.props.item);
+    this.props.toggleView('details', this.props.item);
   }
 
   render() {

@@ -32,7 +32,9 @@ class ProductDtails extends React.Component {
 
       ? <div className='container'>
         <div className='row card m-4 p-4'>
-          <div className="back-arrow w-100 m-2 cursor text-muted" onClick={this.handleBackClick} > {<i className="fas fa-arrow-left"></i>} Back to catalog</div>
+          <div className="back-arrow w-100 m-2 cursor text-muted" onClick={this.handleBackClick} >
+            {<i className="fas fa-arrow-left"></i>} Back to catalog
+          </div>
           <div className="row justify-content-center m-2 p-2">
             <img className="col-5 card-img-left" src={this.state.product.image} alt={this.state.product.name} />
             <div className="col-7">
