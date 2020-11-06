@@ -7,6 +7,7 @@ class ProductDtails extends React.Component {
       product: null
     };
     this.handleBackClick = this.handleBackClick.bind(this);
+    this.handleAddClick = this.handleAddClick.bind(this);
   }
 
   componentDidMount() {
@@ -22,6 +23,10 @@ class ProductDtails extends React.Component {
     this.props.toggleView('catalog', null);
   }
 
+  handleAddClick() {
+    this.props.addToCart(this.state.product);
+  }
+
   render() {
     return this.state.product
 
@@ -34,6 +39,7 @@ class ProductDtails extends React.Component {
               <h4 className="card-title">{this.state.product.name}</h4>
               <h6 className="card-subtitle mb-2 text-muted">{`$${this.state.product.price}.00`}</h6>
               <p className="card-text">{this.state.product.shortDescription}</p>
+              <button className="btn btn-primary" onClick={this.handleAddClick}>Add to Cart</button>
             </div>
           </div>
           <div className="card-text">{this.state.product.longDescription}</div>
