@@ -20,3 +20,7 @@ img{
 .cursor{
   cursor: pointer;
 }
+
+.no-cursor{
+  cursor: none;
+}
