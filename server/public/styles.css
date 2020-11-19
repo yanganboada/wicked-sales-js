@@ -3,7 +3,9 @@
 }
 
 body{
-  margin: 0;
+  margin: 0 auto;
+  text-align: center;
+  color: #39353f;
   background-color: #F2F2F2;
   font-family: 'Lato', sans-serif;
 }
@@ -23,4 +25,56 @@ img{
 
 .no-cursor{
   cursor: none;
+}
+
+.top-bar{
+  height: 5vh;
+  padding: 0.5%;
+  color: white;
+  background-color: teal;
+  font-size: .9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-bar *{
+  margin: 0 5px;
+}
+
+.header-main {
+  margin: 0 auto;
+  padding: 2% 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.header-main h3{
+  font-family: 'Julius Sans One', sans-serif;
+  letter-spacing: 4px;
+  font-weight: bold;
+}
+
+nav ul{
+  list-style: none;
+  flex-basis: 60%;
+  align-self: flex-start;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 30px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: .9rem;
+  font-weight: bolder;
+}
+
+.cart-icon {
+  display: flex;
+}
+
+.cart-icon * {
+  margin: 0 3px;
 }
