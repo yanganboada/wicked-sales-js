@@ -97,7 +97,6 @@ class App extends React.Component {
       .catch(err => console.error(err));
   }
 
-
   render() {
     if (this.state.view.name === 'catalog') {
       return (
@@ -120,14 +119,14 @@ class App extends React.Component {
           <Header cartItemCount={this.state.cart.length} toggleView={this.setView}/>
           <CartSummary cart={this.state.cart} toggleView={this.setView}/>
         </div>
-      )
+      );
     } else if (this.state.view.name === 'checkout') {
       return (
         <div>
           <Header cartItemCount={this.state.cart.length} toggleView={this.setView} />
           <CheckoutForm cart={this.state.cart} toggleView={this.setView} placeOrder={this.placeOrder} />
         </div>
-      )
+      );
     }
   }
 }
