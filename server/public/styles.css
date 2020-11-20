@@ -8,6 +8,7 @@ body{
   color: #39353f;
   background-color: #F2F2F2;
   font-family: 'Lato', sans-serif;
+  position: relative;
 }
 
 img{
@@ -30,8 +31,9 @@ img{
 .top-bar{
   height: 5vh;
   padding: 0.5%;
-  color: white;
-  background-color: teal;
+  color: #DADED4;
+  letter-spacing: 2px;
+  background-color: #3c403d;
   font-size: .9rem;
   display: flex;
   justify-content: center;
@@ -44,7 +46,8 @@ img{
 
 .header-main {
   margin: 0 auto;
-  padding: 2% 5%;
+  padding: 1.5% 5% .5%;
+  position: sticky;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -58,16 +61,16 @@ img{
 
 nav ul{
   list-style: none;
-  flex-basis: 60%;
   align-self: flex-start;
   display: flex;
 }
 
 nav ul li {
-  margin: 0 30px;
+  margin: 0 40px 0 0;
   text-transform: uppercase;
   text-decoration: none;
   font-size: .9rem;
+  letter-spacing: 2px;
   font-weight: bolder;
 }
 
@@ -77,4 +80,80 @@ nav ul li {
 
 .cart-icon * {
   margin: 0 3px;
+}
+
+.carousel {
+  margin: 0 auto;
+  height: 60vh;
+  background-color: #A3BCB6;
+  border: 1px solid lightgray;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2%;
+}
+
+.carousel-body {
+  width: 100%;
+  padding: 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.carousel-body img {
+  position: relative;
+  width: 30%;
+  height: 40vh;
+  object-fit: scale-down;
+  animation: slider 0.7s ease-in-out;
+}
+
+@keyframes slider {
+  0% {
+    left: -150px;
+    opacity: 0;
+  }
+
+  100% {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+i {
+  cursor: pointer;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+}
+
+.dots i {
+  padding: 0.3rem;
+}
+
+.hide {
+  display: none;
+}
+
+footer{
+  width: 100%;
+  height: 30vh;
+  color: #DADED4;
+  background-color: #3C403D;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.copy-right {
+  padding: 0.5%;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: .8rem;
+  font-weight: bold;
+
 }

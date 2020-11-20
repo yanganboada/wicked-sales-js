@@ -1,10 +1,29 @@
 import React from 'react';
 import Header from './header';
+import Carousel from './carousel';
 import ProductList from './product-list';
 import ProductDetails from './product-details';
 import CartSummary from './cart-summary';
 import CartSummaryItem from './cart-summary-item';
 import CheckoutForm from './checkout-form';
+
+const banner = [
+  {
+    id: '001',
+    name: 'Bulbasaur',
+    imageUrl: 'https://images.ctfassets.net/p3w8f4svwgcg/5foJvEf5EAAaUMuqK0qge/653604e5c33d41d54ae05ccad1dccb12/phase1-silo.png'
+  },
+  {
+    id: '004',
+    name: 'Charmander',
+    imageUrl: 'https://cdn.shopify.com/s/files/1/2997/6356/products/2StacC-G_v4_cc3cf864-2b5b-4da7-8091-5c83f761157b_1000x.jpg?v=1602753432'
+  },
+  {
+    id: '006',
+    name: 'Charizard',
+    imageUrl: 'https://media1.popsugar-assets.com/files/thumbor/S_YfNCUKAgITM_Dpwc-BnDj7V7w/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2019/08/26/841/n/1922794/9adfa86c5d642ee1244973.36618183_/i/Project-62-Astrology-Candle-Collection-Target.jpg'
+  }
+];
 
 class App extends React.Component {
   constructor(props) {
@@ -84,6 +103,7 @@ class App extends React.Component {
       return (
         <div>
           <Header cartItemCount={this.state.cart.length} toggleView={this.setView}/>
+          <Carousel list={banner} />
           <ProductList toggleView={this.setView} />
         </div>
       );
