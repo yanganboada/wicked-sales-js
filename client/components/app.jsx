@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './header';
 import Carousel from './carousel';
+import PromotionalGrid from './promotional-grid';
 import ProductList from './product-list';
 import ProductDetails from './product-details';
 import CartSummary from './cart-summary';
@@ -103,6 +104,7 @@ class App extends React.Component {
         <div>
           <Header cartItemCount={this.state.cart.length} toggleView={this.setView}/>
           <Carousel list={banner} />
+          <PromotionalGrid toggleView={this.setView}/>
           <ProductList toggleView={this.setView} />
         </div>
       );

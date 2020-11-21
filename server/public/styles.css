@@ -5,7 +5,7 @@
 body{
   margin: 0 auto;
   text-align: center;
-  color: #39353f;
+  color: #3c403d;
   background-color: #F2F2F2;
   font-family: 'Lato', sans-serif;
   position: relative;
@@ -46,17 +46,29 @@ img{
 
 .header-main {
   margin: 0 auto;
-  padding: 1.5% 5% .5%;
+  padding: 1.5% 5% 0.3%;
   position: sticky;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
 }
 
-.header-main h3{
+.logo{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.logo h3 {
   font-family: 'Julius Sans One', sans-serif;
   letter-spacing: 4px;
   font-weight: bold;
+}
+
+.logo img {
+  margin: 2px 6px 0;
+  width: 26px;
+  align-self: baseline;
 }
 
 nav ul{
@@ -155,5 +167,67 @@ footer{
   letter-spacing: 2px;
   font-size: .8rem;
   font-weight: bold;
+}
 
+.promotion {
+  width: 90%;
+  margin: 3% auto;
+  display: grid;
+  grid-template-columns: 66% 10%;
+  cursor: pointer;
+}
+
+.promo-right *{
+  margin: 0 0 2% 0;
+}
+
+.product-list-header{
+  display: flex;
+  justify-content: center;
+}
+
+.product-list-header h1 {
+  font-size: 3rem;
+  color: #3c403d;
+  font-family: 'Dancing Script', cursive;;
+  letter-spacing: 2px;
+}
+
+.product-list-header h1 {
+  margin: 0 5px;
+}
+
+.filter {
+  display: flex;
+  margin: 0 0 2% 0;
+}
+
+.filter img {
+  width: 50px;
+}
+
+.filter figure {
+  text-align: center;
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.filter figcaption {
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.filter figure:hover figcaption {
+  color:#39603d;
+}
+
+.fade-in {
+animation: fadeIn ease 1s;
+}
+
+@keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
 }
