@@ -15,13 +15,16 @@ class Header extends React.Component {
       <header>
         <div className='top-bar'><i className="fas fa-shipping-fast"></i><span>Free Shipping US orders $75+</span></div>
         <div className= 'header-main'>
-          <h3>YABSHOP</h3>
+          <div className='logo'>
+            <img src="./images/favicon.png" />
+            <h3>YABSHOP</h3>
+          </div>
           <nav>
             <ul>
-              <li><a href="#"></a> For Him</li>
-              <li><a href="#"></a> For Her</li>
-              <li><a href="#"></a> For Kids</li>
-              <li><a href="#"></a> Contact</li>
+              <li><a href="#"></a>Living Room</li>
+              <li><a href="#"></a>Bedroom</li>
+              <li><a href="#"></a>Home Office</li>
+              <li><a href="#"></a>Contact</li>
             </ul>
           </nav>
           <div className="cart-icon" onClick={this.handleCartClick}>
