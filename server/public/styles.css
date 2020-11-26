@@ -231,3 +231,14 @@ animation: fadeIn ease 1s;
 0% {opacity:0;}
 100% {opacity:1;}
 }
+
+.footer-links{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-links li{
+  text-decoration: none;
+  padding: 5%;
+}
